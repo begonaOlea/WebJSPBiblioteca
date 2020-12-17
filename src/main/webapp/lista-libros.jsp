@@ -35,6 +35,7 @@
                                 <th scope="col">Título</th>
                                 <th scope="col">Autor</th>
                                 <th scope="col">Disponibilidad</th>
+                                <th scope="col">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,11 +47,16 @@
                                 <td><%= l.getAutor()%></td>
                                 <td>
                                     <% if (l.isDisponible()) { %>
-                                        disponible
+                                    disponible
                                     <% } else { %>
-                                        alquilado
+                                    alquilado
                                     <%} %>
-                                 </td>
+                                </td>
+                                <td>
+                                    <% if (l.isDisponible()) {%>
+                                     <a href="alquilar?id=<%= l.getId()%>" >Alquilar</a>
+                                    <%} %>
+                                </td>
                             </tr>   
                             <% }%>
                         </tbody>

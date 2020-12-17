@@ -20,6 +20,8 @@ public class DB {
         libros.put(4, new Libro(4, "La vida es Sueño", "Calderón de la Barca", true));
     }
     
+    private DB(){}
+    
     public static Collection<Libro> getAllLibros(){
         return libros.values();
     }
@@ -33,5 +35,9 @@ public class DB {
         }        
         return prestados;
     }
-    
+      
+      public static void alquilar(int id){          
+          libros.get(id).setDisponible(false);
+      }    
+      
 }
