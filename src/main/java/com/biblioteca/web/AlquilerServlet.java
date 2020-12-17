@@ -25,29 +25,31 @@ public class AlquilerServlet extends HttpServlet {
         //          y Despachar la peticion al JSP  lista-libros.jps
         
         String sId = req.getParameter("id");
-        String msgError = null;
+        String mensaje = null;
         int id = 0;
         if(sId == null || sId.trim().length() == 0){
-            msgError ="Debe indicar el  id del libro a alquilar.";
+            mensaje ="Debe indicar el  id del libro a alquilar.";
         }else{
             try{
                 id = Integer.parseInt(sId);            
             }catch(NumberFormatException e){
-                msgError = "Debe indicar un id de producto con formato número entero";
+                mensaje = "Debe indicar un id de producto con formato número entero";
             }            
-        }        
-        if(msgError == null){
+        }  
+        
+        
+        if(mensaje == null){
             //MODEL
             DB.alquilar(id);
+            mensaje = "Alquiló ok";
         }
         
         //despachar al JSP
-        
         RequestDispatcher rd = req.getRequestDispatcher("lista-libros.jsp");
         //pendiente pasar msgError
+        
+        req.setAttribute("mensaje", mensaje);        
         rd.forward(req, resp);
-        
-        
         
     }//fin doGet
 

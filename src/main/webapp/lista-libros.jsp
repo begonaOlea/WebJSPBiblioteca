@@ -25,7 +25,19 @@
                     <h1>Lista libros</h1>
 
                     <%
-                        Collection<Libro> libros = DB.getAllLibros();
+                        if (request.getAttribute("mensaje") != null) {
+                            //hay mensaje
+                            String msg = (String) request.getAttribute("mensaje");
+                    %>
+
+                    <div class="alert alert-success" role="alert">
+                        <%= msg %>
+                    </div>
+                    <%
+                        }//fin if
+                    %>
+
+                    <%                        Collection<Libro> libros = DB.getAllLibros();
                     %>
 
                     <table class="table table-striped">
@@ -54,7 +66,7 @@
                                 </td>
                                 <td>
                                     <% if (l.isDisponible()) {%>
-                                     <a href="alquilar?id=<%= l.getId()%>" >Alquilar</a>
+                                    <a href="alquilar?id=<%= l.getId()%>" >Alquilar</a>
                                     <%} %>
                                 </td>
                             </tr>   
