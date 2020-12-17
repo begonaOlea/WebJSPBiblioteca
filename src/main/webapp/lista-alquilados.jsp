@@ -1,4 +1,7 @@
 
+<%@page import="com.biblioteca.model.DB"%>
+<%@page import="java.util.Collection"%>
+<%@page import="com.biblioteca.model.Libro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +18,32 @@
             <div class="row">
                 <div class="col">
                     <h1>Lista libros Alquilados</h1>
+                    
+                    
+                    <%
+                        Collection<Libro> libros = DB.getLibrosPrestados();
+                    %>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Autor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <% for (Libro l : libros) {%>
+                            <tr>
+                                <th scope="row"><%= l.getId()%></th>
+                                <td><%= l.getTitulo()%></td>
+                                <td><%= l.getAutor()%></td>
+                            </tr>
+                            <% }%>
+                        </tbody>
+                    </table>
+                    
                 </div>
             </div>
         </div>

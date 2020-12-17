@@ -15,9 +15,9 @@ public class DB {
     static{
         libros = new HashMap<Integer,Libro>();
         libros.put(1, new Libro(1, "El Guijote", "Miguel de Cervantes", false));
-        libros.put(1, new Libro(2, "La Odisea", "Homero", false));
-        libros.put(1, new Libro(3, "La Divina Comedia", "Dante", true));
-        libros.put(1, new Libro(3, "La vida es Sueño", "Calderón de la Barca", true));
+        libros.put(2, new Libro(2, "La Odisea", "Homero", false));
+        libros.put(3, new Libro(3, "La Divina Comedia", "Dante", true));
+        libros.put(4, new Libro(4, "La vida es Sueño", "Calderón de la Barca", true));
     }
     
     public static Collection<Libro> getAllLibros(){
