@@ -7,9 +7,17 @@
         <servlet-name>AlquilerServlet</servlet-name>
         <servlet-class>com.biblioteca.web.AlquilerServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AltaLibroServlet</servlet-name>
+        <servlet-class>com.biblioteca.web.AltaLibroServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AlquilerServlet</servlet-name>
         <url-pattern>/alquilar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AltaLibroServlet</servlet-name>
+        <url-pattern>/alta-nuevo-libro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
