@@ -1,4 +1,3 @@
-
 package com.biblioteca.model;
 
 import com.biblioteca.excepciones.DBException;
@@ -44,7 +43,7 @@ public class DB {
           libros.get(id).setDisponible(false);
       }    
       
-      public void altaLibro(Libro libro) throws DBException{  
+      public static void altaLibro(Libro libro) throws DBException{  
           if ( libros.containsKey(libro.getId())){
               throw new DBException("El libro ya existe con el id " + libro.getId());
           }
