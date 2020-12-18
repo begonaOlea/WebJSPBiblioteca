@@ -1,6 +1,7 @@
 
 package com.biblioteca.model;
 
+import com.biblioteca.excepciones.DBException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -36,8 +37,18 @@ public class DB {
         return prestados;
     }
       
-      public static void alquilar(int id){          
+      public static void alquilar(int id){      
+          //MEJORAR - LANZAR UNA EXCEPCION SI ID NO EXISTE
+          // SINO  libros.get(id) returna null y 
+          // null.setDiponible(fale) da NullPointerExcpetion        
           libros.get(id).setDisponible(false);
       }    
+      
+      public void altaLibro(Libro libro) throws DBException{  
+          if ( libros.containsKey(libro.getId())){
+              throw new DBException("El libro ya existe con el id " + libro.getId());
+          }
+          libros.put(libro.getId(), libro);          
+      }
       
 }

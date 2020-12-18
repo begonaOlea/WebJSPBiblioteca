@@ -1,13 +1,8 @@
-<%-- 
-    Document   : lista-libros
-    Created on : 17-dic-2020, 10:58:06
-    Author     : ususario
---%>
-
 <%@page import="com.biblioteca.model.Libro"%>
 <%@page import="java.util.Collection"%>
 <%@page import="com.biblioteca.model.DB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,6 +19,18 @@
                 <div class="col">
                     <h1>Lista libros</h1>
 
+                    ejemplo EL  *${requestScope.mensaje}*
+                    <br />
+                    ejemplo jsp *<%=  request.getAttribute("mensaje")%>*
+
+                    
+
+                    <c:if test="${not empty requestScope.mensaje}" >
+                        <div class="alert alert-success" role="alert">
+                           ${requestScope.mensaje}
+                        </div>
+                    </c:if>
+
                     <%
                         if (request.getAttribute("mensaje") != null) {
                             //hay mensaje
@@ -31,14 +38,13 @@
                     %>
 
                     <div class="alert alert-success" role="alert">
-                        <%= msg %>
+                        <%= msg%>
                     </div>
                     <%
                         }//fin if
                     %>
 
-                    <%                        Collection<Libro> libros = DB.getAllLibros();
-                    %>
+                    <%   Collection<Libro> libros = DB.getAllLibros();  %>
 
                     <table class="table table-striped">
                         <thead>
