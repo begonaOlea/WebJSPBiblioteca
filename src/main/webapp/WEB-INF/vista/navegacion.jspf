@@ -13,6 +13,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="form-alta-libro.jsp">Alta Libro</a>
             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="form-alta-usuario.jsp">Alta Usuario</a>
+            </li>
         </ul>
     </div>
 </div>

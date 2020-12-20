@@ -59,7 +59,7 @@ public class DB {
         return usuarios;
     }
 
-    public synchronized static void addUsuario(Usuario u) throws DBException {
+    public synchronized static void altaUsuario(Usuario u) throws DBException {
         boolean seAñade = usuarios.add(u);
         if (!seAñade) {
             throw new DBException("No ha sido añadido. Ya existe");
