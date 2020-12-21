@@ -38,7 +38,7 @@
                     <form action="alta-nuevo-usuario" method="post">
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" id="email" 
+                                <input type="email" class="form-control" id="email" 
                                        placeholder="Introduce el email" name="email">
                             </div>
                             <div class="col">${ requestScope.msgErrorEmail }</div>
