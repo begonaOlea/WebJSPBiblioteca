@@ -1,11 +1,14 @@
-package com.biblioteca.model;
+package com.biblioteca.servicios;
 
 import com.biblioteca.excepciones.DBException;
+import com.biblioteca.model.Libro;
+import com.biblioteca.model.Usuario;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import javax.ejb.Stateless;
 
 public class DB {
 
@@ -62,7 +65,7 @@ public class DB {
     public synchronized static void altaUsuario(Usuario u) throws DBException {
         boolean seAñade = usuarios.add(u);
         if (!seAñade) {
-            throw new DBException("No ha sido añadido. Ya existe");
+            throw new DBException("El usuario no pudo ser añadido. El email ya existe.");
         }
     }
 }
