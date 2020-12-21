@@ -1,3 +1,5 @@
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="row">
     <div class="col-4">
         <img src="imgs/logo.png" alt="logo" />
@@ -5,7 +7,18 @@
     <div class="col-6">
         <h1>Biblioteca </h1> 
     </div>
-     <div class="col-2">
-         <h5> Usuario:  ${ sessionScope.usuario.email  }</h5>
+    <div class="col-2">
+        <c:choose >
+            <c:when test="${ not empty sessionScope.usuario}">
+                <h5> Usuario:  ${ sessionScope.usuario.nombre} 
+                               ${ sessionScope.usuario.apellidos  }</h5>
+                <a href="logout">logout</a>
+            </c:when>
+            <c:otherwise>
+                <a href="login.jsp">login</a>
+            </c:otherwise>
+        </c:choose>
+
+
     </div>
 </div>

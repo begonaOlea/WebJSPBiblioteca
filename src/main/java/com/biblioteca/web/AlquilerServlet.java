@@ -1,7 +1,7 @@
 
 package com.biblioteca.web;
 
-import com.biblioteca.servicios.DB;
+import com.biblioteca.model.DB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;

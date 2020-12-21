@@ -1,9 +1,10 @@
 package com.biblioteca.web;
 
 import com.biblioteca.excepciones.DBException;
-import com.biblioteca.servicios.DB;
+import com.biblioteca.model.DB;
 import com.biblioteca.model.Libro;
 import com.biblioteca.model.Usuario;
+import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -67,6 +69,11 @@ public class AltaUsuarioServlet extends HttpServlet {
             Usuario usuario = new Usuario(paramEmail, paramPwd, paramNombre, paramApell);
             try {
                 DB.altaUsuario(usuario);
+                // add usuario ATRIBUTO DE SESION
+                //El usuario no manda jSessionId , crea una nueva sesion
+                //sino devuelve la sesión existente para es id
+                HttpSession session = request.getSession();
+                session.setAttribute("usuario", usuario);
             } catch (DBException e) {
                 msgErrorAlta = e.getMessage();
                 valido = false;               

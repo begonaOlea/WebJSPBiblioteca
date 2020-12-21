@@ -1,4 +1,4 @@
-package com.biblioteca.servicios;
+package com.biblioteca.model;
 
 import com.biblioteca.excepciones.DBException;
 import com.biblioteca.model.Libro;
