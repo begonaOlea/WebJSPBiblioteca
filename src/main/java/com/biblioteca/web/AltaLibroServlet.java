@@ -1,7 +1,7 @@
 package com.biblioteca.web;
 
 import com.biblioteca.excepciones.DBException;
-import com.biblioteca.model.DB;
+import com.biblioteca.servicios.DB;
 import com.biblioteca.model.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;

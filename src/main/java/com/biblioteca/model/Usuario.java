@@ -1,9 +1,10 @@
 
 package com.biblioteca.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Usuario {
+public class Usuario implements Serializable{
     
     private String email; // PK
     private String password;

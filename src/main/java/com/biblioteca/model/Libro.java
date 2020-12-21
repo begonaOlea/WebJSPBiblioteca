@@ -1,9 +1,10 @@
 
 package com.biblioteca.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Libro {
+public class Libro implements Serializable{
 
     private Integer id;
     private String titulo;
