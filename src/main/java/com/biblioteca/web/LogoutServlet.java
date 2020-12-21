@@ -1,9 +1,7 @@
-
 package com.biblioteca.web;
 
 import com.biblioteca.servicios.LoginService;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,12 +20,9 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
       LoginService servicio = new LoginService();
-      servicio.logout(req.getSession());
-      
-         RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
-        rd.forward(req, resp);
+      servicio.logout(req.getSession());      
+      RequestDispatcher rd = req.getRequestDispatcher("login.jsp");
+      rd.forward(req, resp);
     }
-
-  
     
 }
