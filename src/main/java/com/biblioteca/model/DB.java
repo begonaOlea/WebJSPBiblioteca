@@ -33,7 +33,7 @@ public class DB {
     public synchronized static Collection<Libro> getAllLibros() {
         return libros.values();
     }
-
+    
     public static Collection<Libro> getLibrosPrestados() {
         Set<Libro> prestados = new HashSet<Libro>();
         for (Libro l : libros.values()) {
