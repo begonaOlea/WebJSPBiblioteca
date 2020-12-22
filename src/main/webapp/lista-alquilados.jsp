@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista libros alquilados</title>
-        <%@include file="WEB-INF/vista/bootStrap.html" %>
+        <%@include file="WEB-INF/vista/estilos.jspf" %>
     </head>
     <body>
         <div class="container">
